@@ -1,17 +1,19 @@
 === After Login Redirect ===
+Tags: wp-login, wp-custom-login, login-redirect, custom-redirect, wp-login-customize
 Contributors: sajjad67
-Tags: user,user-login,ajax,wp-login,wp-custom-login,redirect,wp-redirect,user-redirect,after-login-redirect,custom-redirect,filters,redirect-to,wp-user-login,wp-login-customize,auto-complete
+Author: Sajjad Hossain Sagor
+Tested up to: 6.7
 Requires at least: 5.6
-Tested up to: 6.6
-Stable tag: trunk
-License: GPLv2
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: 2.0.0
+Requires PHP: 8.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Redirect user to anywhere at your will.
 
 == Description ==
 
-Send user to custom page after successfull user login. Filter user id,email,username and by user role to redirect user to specific page.
+Send user to custom page after successful user login. Filter user by id, email, username and by user role to redirect user to specific page.
 
 = Features: =
 - Redirect user after login
@@ -35,8 +37,8 @@ Go to Plugins > Add New.
 4. The resulting installation screen will list the installation as successful or note any problems during the install.
 If successful, click Activate Plugin to activate it, or Return to Plugin Installer for further actions.
 
-To add a WordPress Plugin from github repo / plugin zip file :
-1. Go to Wordpress plugin page
+To add a WordPress Plugin from GitHub repo / plugin zip file :
+1. Go to WordPress plugin page
 2. Click Add New & Upload Plugin
 3. Drag / Click upload the plugin zip file
 4. The resulting installation screen will list the installation as successful or note any problems during the install.
@@ -49,6 +51,8 @@ Just activate After Login Redirect plugin, and go to plugin page called Login Re
 1. Login Redirect Filter Add.
 
 == Changelog ==
+= 2.0.0 =
+- Major changes in codebase. Compatibility checkup for latest wp version 6.7
 = 1.0.5 =
 - Compatibility check for wp v6.6
 = 1.0.4 =
