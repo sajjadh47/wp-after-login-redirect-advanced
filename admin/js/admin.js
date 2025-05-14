@@ -47,9 +47,9 @@ jQuery( document ).ready( function( $ )
 		var _this = $( this );
 		var data  =
 		{
-			wplra_login_redirect_enable 				: 'off',
-			action  									: 'wplra_save_enable_disable_toggle',
-			wplra_login_redirect_filters_fields_submit  : $( '#wplra_login_redirect_filters_fields_submit' ).val()
+			wplra_login_redirect_enable : 'off',
+			action  					: 'wplra_save_enable_disable_toggle',
+			wplra_nonce  				: $( '#wplra_nonce' ).val()
 		};
 		
 		if ( $( _this ).is( ':checked' ) )
@@ -117,9 +117,9 @@ jQuery( document ).ready( function( $ )
 
 			var data =
 			{
-				filters : filters,
-				action  : 'wplra_save_redirect_filters',
-				wplra_login_redirect_filters_fields_submit   : $( '#wplra_login_redirect_filters_fields_submit' ).val()
+				filters		: filters,
+				action		: 'wplra_save_redirect_filters',
+				wplra_nonce	: $( '#wplra_nonce' ).val()
 			};
 
 			$.post( ajaxurl, data, function( response )
