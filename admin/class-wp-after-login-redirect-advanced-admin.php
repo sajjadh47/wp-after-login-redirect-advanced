@@ -180,7 +180,7 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 
 		if ( isset( $_POST['wplra_login_redirect_filter_reset'] ) ) {
 			// Check nonce for security.
-			if ( ! isset( $_POST['wplra_login_redirect_filters_fields_submit'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wplra_login_redirect_filters_fields_submit'] ) ), 'wplra_login_redirect_filters_values_submit' )
+			if ( ! isset( $_POST['wplra_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wplra_nonce'] ) ), 'wplra_nonce' )
 				) {
 				// Invalid request.
 				echo '<div class="notice notice-error is-dismissible">';
@@ -234,7 +234,7 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 		 */
 		$this->messages = apply_filters( 'wplra_login_redirect_messages', array() );
 
-		if ( ! isset( $_POST['wplra_login_redirect_filters_fields_submit'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wplra_login_redirect_filters_fields_submit'] ) ), 'wplra_login_redirect_filters_values_submit' )
+		if ( ! isset( $_POST['wplra_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wplra_nonce'] ) ), 'wplra_nonce' )
 			) {
 			// Invalid request.
 			wp_send_json( $this->messages['nonce_error_msg'] );
@@ -293,8 +293,8 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 		 */
 		$this->messages = apply_filters( 'wplra_login_redirect_messages', array() );
 
-		if ( ! isset( $_POST['wplra_login_redirect_filters_fields_submit'] )
-				|| ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wplra_login_redirect_filters_fields_submit'] ) ), 'wplra_login_redirect_filters_values_submit' )
+		if ( ! isset( $_POST['wplra_nonce'] )
+				|| ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['wplra_nonce'] ) ), 'wplra_nonce' )
 			) {
 			// Invalid request.
 			wp_send_json( $this->messages['nonce_error_msg'] );

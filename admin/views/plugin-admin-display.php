@@ -59,7 +59,7 @@ $wplra_login_redirect_filters = get_option( 'wplra_login_redirect_filters', arra
 		<button type="submit" class="button button-primary" name="wplra_login_redirect_filter_submit" id="wplra_login_redirect_filter_submit">
 			<?php esc_html_e( 'Save Changes', 'wp-after-login-redirect-advanced' ); ?>
 		</button>
-		<?php wp_nonce_field( 'wplra_login_redirect_filters_values_submit', 'wplra_login_redirect_filters_fields_submit' ); ?>
+		<?php wp_nonce_field( 'wplra_nonce', 'wplra_nonce' ); ?>
 		<button type="submit" class="button button-secondary" name="wplra_login_redirect_filter_reset" id="wplra_login_redirect_filter_reset">
 			<?php esc_html_e( 'Reset', 'wp-after-login-redirect-advanced' ); ?>
 		</button>
