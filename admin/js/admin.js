@@ -2,9 +2,8 @@ jQuery( document ).ready( function( $ )
 {
 	$( document ).on( 'change', '.wplra_select_filter_by_elem', function( event )
 	{
-		var parent 	= $( this ).closest( '.wplra_filtering_group_container' );
-		
-		var val 	= $( this ).val();
+		var parent = $( this ).closest( '.wplra_filtering_group_container' );
+		var val    = $( this ).val();
 		
 		$( parent ).find( 'select' ).not( $( this ) ).hide();
 		
@@ -15,7 +14,7 @@ jQuery( document ).ready( function( $ )
 	{
 		var options =
 		{
-			source: Wp_After_Login_Redirect_Advanced.url_sugestions,
+			source: WpAfterLoginRedirectAdvanced.urlSugestions,
 		};
 
 		$( this ).autocomplete( options );
@@ -45,9 +44,8 @@ jQuery( document ).ready( function( $ )
 	{
 		$( '.wplra_login_redirect_filter_message' ).hide( 'slow' );
 		
-		var _this								= $( this );
-		
-		var data 								=
+		var _this = $( this );
+		var data  =
 		{
 			wplra_login_redirect_enable 				: 'off',
 			action  									: 'wplra_save_enable_disable_toggle',
@@ -56,7 +54,7 @@ jQuery( document ).ready( function( $ )
 		
 		if ( $( _this ).is( ':checked' ) )
 		{
-			data.wplra_login_redirect_enable 	= 'on';
+			data.wplra_login_redirect_enable = 'on';
 		}
 
 		$.post( ajaxurl, data, function( response )
@@ -83,7 +81,7 @@ jQuery( document ).ready( function( $ )
 	{
 		event.preventDefault();
 
-		var empty 			= false;
+		var empty = false;
 
 		$( '.wplra_login_redirect_filter_message' ).hide( 'slow' );
 
@@ -91,23 +89,23 @@ jQuery( document ).ready( function( $ )
 		{
 			if ( $( this ).find( '.wplra_redirect_url' ).val() == '' )
 			{
-				$( '.wplra_login_redirect_filter_message p' ).text( Wp_After_Login_Redirect_Advanced.redirect_url_cannot_be_empty_txt );
+				$( '.wplra_login_redirect_filter_message p' ).text( WpAfterLoginRedirectAdvanced.redirectUrlCannotBeEmptyTxt );
 
 				$( '.wplra_login_redirect_filter_message' ).addClass( 'notice-error' ).show( 'slow' );
 
-				empty 		= true; return;
-			};
+				empty = true; return;
+			}
 		} );
 
 		if ( ! empty )
 		{
-			$( this ).text( Wp_After_Login_Redirect_Advanced.saving_txt ).prop( 'disabled', true );
+			$( this ).text( WpAfterLoginRedirectAdvanced.savingTxt ).prop( 'disabled', true );
 
-			var filters 	= [];
+			var filters = [];
 
 			$( '.wplra_filtering_group_container' ).each( function( index, el )
 			{
-				filter_by_ 	= $( this ).find( '.wplra_select_filter_by_elem' ).val();
+				filter_by_ = $( this ).find( '.wplra_select_filter_by_elem' ).val();
 
 				filters.push(
 				{
@@ -126,11 +124,11 @@ jQuery( document ).ready( function( $ )
 
 			$.post( ajaxurl, data, function( response )
 			{
-				$( '#wplra_login_redirect_filter_submit' ).text( Wp_After_Login_Redirect_Advanced.settings_saved_txt );
+				$( '#wplra_login_redirect_filter_submit' ).text( WpAfterLoginRedirectAdvanced.settingsSavedTxt );
 
 				setTimeout( function()
 				{
-					$( '#wplra_login_redirect_filter_submit' ).text( Wp_After_Login_Redirect_Advanced.save_changes_txt ).prop( 'disabled', false );
+					$( '#wplra_login_redirect_filter_submit' ).text( WpAfterLoginRedirectAdvanced.saveChangesTxt ).prop( 'disabled', false );
 
 				}, 2000 );
 

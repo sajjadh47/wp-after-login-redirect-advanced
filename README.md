@@ -1,13 +1,8 @@
 # After Login Redirect
 
-**Tags:** user,user-login,ajax,wp-login,wp-custom-login,redirect,wp-redirect,user-redirect,after-login-redirect,custom-redirect,filters,redirect-to,wp-user-login,wp-login-customize,auto-complete \
-**Contributors:** sajjad67 \
-**Requires at least:** 5.6 \
-**Tested up to:** 6.7 \
-**Stable tag:** 2.0.0 \
-**Requires PHP:** 8.0 \
-**License:** GPLv2 \
-**License URI:** http://www.gnu.org/licenses/gpl-2.0.html
+**Tags:** wp-login, wp-custom-login, login-redirect, custom-redirect, wp-login-customize \
+**Tested up to:** 6.8 \
+**Requires PHP:** 8.0
 
 Redirect user to anywhere at your will.
 
@@ -17,15 +12,12 @@ Send user to custom page after successfull user login. Filter user id,email,user
 
 ### Features:
 
-- Redirect user after login
-- User will redirected to specific page according to the filter.
-- Site's all page/posts url auto suggestion in redirect to field (see screenshot).
-- Unlimited filter creation
-- Filter Enable / Disable option
-- Filters Settings ajax save
-
-**Interested in contributing to After Login Redirect?**
-Contact me at sagorh672(at)gmail.com
+- Redirect Users After Login
+- Automatically Redirect to Specific Pages Based on Defined Filters
+- Auto-Suggest URLs for All Pages and Posts in the "Redirect To" Field
+- Create Unlimited Filters
+- Filter Enable / Disable Option
+- Save Filter Settings via AJAX
 
 ## Installation
 
@@ -39,8 +31,8 @@ Go to Plugins > Add New.
 4. The resulting installation screen will list the installation as successful or note any problems during the install.
 If successful, click Activate Plugin to activate it, or Return to Plugin Installer for further actions.
 
-To add a WordPress Plugin from github repo / plugin zip file :
-1. Go to Wordpress plugin page
+To add a WordPress Plugin from GitHub repo / plugin zip file :
+1. Go to WordPress plugin page
 2. Click Add New & Upload Plugin
 3. Drag / Click upload the plugin zip file
 4. The resulting installation screen will list the installation as successful or note any problems during the install.
@@ -59,6 +51,9 @@ Just activate After Login Redirect plugin, and go to plugin page called Login Re
 
 
 ## Changelog
+
+### 2.0.1
+- Checked for latest wp version 6.8
 
 ### 2.0.0
 - Minor changes in codebase only.

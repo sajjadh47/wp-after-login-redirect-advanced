@@ -2,9 +2,9 @@
 Tags: wp-login, wp-custom-login, login-redirect, custom-redirect, wp-login-customize
 Contributors: sajjad67
 Author: Sajjad Hossain Sagor
-Tested up to: 6.7
+Tested up to: 6.8
 Requires at least: 5.6
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -12,19 +12,15 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Redirect user to anywhere at your will.
 
 == Description ==
-
 Send user to custom page after successful user login. Filter user by id, email, username and by user role to redirect user to specific page.
 
 = Features: =
-- Redirect user after login
-- User will redirected to specific page according to the filter.
-- Site's all page/posts url auto suggestion in redirect to field (see screenshot).
-- Unlimited filter creation
-- Filter Enable / Disable option
-- Filters Settings ajax save
-
-**Interested in contributing to After Login Redirect?**
-Contact me at sagorh672(at)gmail.com
+- Redirect Users After Login
+- Automatically Redirect to Specific Pages Based on Defined Filters
+- Auto-Suggest URLs for All Pages and Posts in the "Redirect To" Field
+- Create Unlimited Filters
+- Filter Enable / Disable Option
+- Save Filter Settings via AJAX
 
 == Installation ==
 To add a WordPress Plugin using the built-in plugin installer:
@@ -51,6 +47,8 @@ Just activate After Login Redirect plugin, and go to plugin page called Login Re
 1. Login Redirect Filter Add.
 
 == Changelog ==
+= 2.0.1 =
+- Checked for latest wp version 6.8
 = 2.0.0 =
 - Major changes in codebase. Compatibility checkup for latest wp version 6.7
 = 1.0.5 =

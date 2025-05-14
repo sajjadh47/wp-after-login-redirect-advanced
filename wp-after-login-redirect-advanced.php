@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -8,13 +7,15 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @since             2.0.0
  * @package           Wp_After_Login_Redirect_Advanced
+ * @author            Sajjad Hossain Sagor <sagorh672@gmail.com>
  *
  * Plugin Name:       After Login Redirect
  * Plugin URI:        https://wordpress.org/plugins/wp-after-login-redirect-advanced/
  * Description:       Redirect User After Successfully Logged in To Any Page You Want Easily. Filter By User ID, Username, User Email, User Role.
- * Version:           2.0.0
+ * Version:           2.0.1
+ * Requires at least: 6.5
+ * Requires PHP:      8.0
  * Author:            Sajjad Hossain Sagor
  * Author URI:        https://sajjadhsagor.com/
  * License:           GPL-2.0+
@@ -24,12 +25,14 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( 'WPINC' ) ) die;
+if ( ! defined( 'ABSPATH' ) ) {
+	die;
+}
 
 /**
  * Currently plugin version.
  */
-define( 'WP_AFTER_LOGIN_REDIRECT_ADVANCED_VERSION', '2.0.0' );
+define( 'WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_VERSION', '2.0.1' );
 
 /**
  * Define Plugin Folders Path
@@ -42,41 +45,39 @@ define( 'WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_BASENAME', plugin_basename( __F
 
 /**
  * The code that runs during plugin activation.
- * This action is documented in includes/class-plugin-activator.php
- * 
+ * This action is documented in includes/class-wp-after-login-redirect-advanced-activator.php
+ *
  * @since    2.0.0
  */
-function activate_wp_after_login_redirect_advanced()
-{
-	require_once WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_PATH . 'includes/class-plugin-activator.php';
-	
-	Wp_After_Login_Redirect_Advanced_Activator::activate();
+function on_activate_wp_after_login_redirect_advanced() {
+	require_once WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_PATH . 'includes/class-wp-after-login-redirect-advanced-activator.php';
+
+	Wp_After_Login_Redirect_Advanced_Activator::on_activate();
 }
 
-register_activation_hook( __FILE__, 'activate_wp_after_login_redirect_advanced' );
+register_activation_hook( __FILE__, 'on_activate_wp_after_login_redirect_advanced' );
 
 /**
  * The code that runs during plugin deactivation.
- * This action is documented in includes/class-plugin-deactivator.php
- * 
+ * This action is documented in includes/class-wp-after-login-redirect-advanced-deactivator.php
+ *
  * @since    2.0.0
  */
-function deactivate_wp_after_login_redirect_advanced()
-{
-	require_once WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_PATH . 'includes/class-plugin-deactivator.php';
-	
-	Wp_After_Login_Redirect_Advanced_Deactivator::deactivate();
+function on_deactivate_wp_after_login_redirect_advanced() {
+	require_once WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_PATH . 'includes/class-wp-after-login-redirect-advanced-deactivator.php';
+
+	Wp_After_Login_Redirect_Advanced_Deactivator::on_deactivate();
 }
 
-register_deactivation_hook( __FILE__, 'deactivate_wp_after_login_redirect_advanced' );
+register_deactivation_hook( __FILE__, 'on_deactivate_wp_after_login_redirect_advanced' );
 
 /**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
- * 
+ *
  * @since    2.0.0
  */
-require WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_PATH . 'includes/class-plugin.php';
+require WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_PATH . 'includes/class-wp-after-login-redirect-advanced.php';
 
 /**
  * Begins execution of the plugin.
@@ -87,10 +88,9 @@ require WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_PATH . 'includes/class-plugin.ph
  *
  * @since    2.0.0
  */
-function run_wp_after_login_redirect_advanced()
-{
+function run_wp_after_login_redirect_advanced() {
 	$plugin = new Wp_After_Login_Redirect_Advanced();
-	
+
 	$plugin->run();
 }
 
