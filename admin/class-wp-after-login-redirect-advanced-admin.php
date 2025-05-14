@@ -158,7 +158,7 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 	 * @access    public
 	 */
 	public function menu_page() {
-		include WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_PATH . 'admin/views/plugin-admin-display.php';
+		require WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_PATH . 'admin/views/plugin-admin-display.php';
 	}
 
 	/**
