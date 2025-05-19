@@ -73,11 +73,11 @@ class Wp_After_Login_Redirect_Advanced {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Wp_After_Login_Redirect_Advanced_Loader.  Orchestrates the hooks of the plugin.
-	 * - Wp_After_Login_Redirect_Advanced_i18n.    Defines internationalization functionality.
-	 * - Sajjad_Dev_Settings_API. Provides an interface for interacting with the WordPress Options API.
-	 * - Wp_After_Login_Redirect_Advanced_Admin.   Defines all hooks for the admin area.
-	 * - Wp_After_Login_Redirect_Advanced_Public.  Defines all hooks for the public side of the site.
+	 * - Wp_After_Login_Redirect_Advanced_Loader. Orchestrates the hooks of the plugin.
+	 * - Wp_After_Login_Redirect_Advanced_i18n.   Defines internationalization functionality.
+	 * - Sajjad_Dev_Settings_API.                 Provides an interface for interacting with the WordPress Options API.
+	 * - Wp_After_Login_Redirect_Advanced_Admin.  Defines all hooks for the admin area.
+	 * - Wp_After_Login_Redirect_Advanced_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.

@@ -1,6 +1,6 @@
 <?php
 /**
- * This file contains the definition of the WP_Edit_Username_Admin class, which
+ * This file contains the definition of the Wp_After_Login_Redirect_Advanced_Admin class, which
  * is used to load the plugin's admin-specific functionality.
  *
  * @package       Wp_After_Login_Redirect_Advanced
@@ -173,8 +173,8 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 		 *
 		 * This filter is applied to the array of messages used for ajax response.
 		 *
-		 * @since     2.0.0
-		 * @param     array $messages An array of messages.
+		 * @since    2.0.0
+		 * @param    array $messages An array of messages.
 		 */
 		$this->messages = apply_filters( 'wplra_login_redirect_messages', array() );
 
@@ -229,8 +229,8 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 		 *
 		 * This filter is applied to the array of messages used for ajax response.
 		 *
-		 * @since     2.0.0
-		 * @param     array $messages An array of messages.
+		 * @since    2.0.0
+		 * @param    array $messages An array of messages.
 		 */
 		$this->messages = apply_filters( 'wplra_login_redirect_messages', array() );
 
@@ -288,8 +288,8 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 		 *
 		 * This filter is applied to the array of messages used for ajax response.
 		 *
-		 * @since     2.0.0
-		 * @param     array $messages An array of messages.
+		 * @since    2.0.0
+		 * @param    array $messages An array of messages.
 		 */
 		$this->messages = apply_filters( 'wplra_login_redirect_messages', array() );
 
