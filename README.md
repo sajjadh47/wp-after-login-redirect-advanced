@@ -1,5 +1,7 @@
 # After Login Redirect
 
+[![Plugin Banner](https://ps.w.org/wp-after-login-redirect-advanced/assets/banner-772x250.png)](https://wordpress.org/plugins/wp-after-login-redirect-advanced/)
+
 **Tags:** wp-login, wp-custom-login, login-redirect, custom-redirect, wp-login-customize \
 **Tested up to:** 6.8 \
 **Requires PHP:** 8.0
