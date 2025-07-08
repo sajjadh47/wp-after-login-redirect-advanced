@@ -36,9 +36,9 @@ $roles = get_editable_roles();
 		<option value="username" <?php selected( $filter_by, 'username' ); ?>><?php esc_html_e( 'User Username', 'wp-after-login-redirect-advanced' ); ?></option>
 	</select>
 	<div class="input-group-append">
-		<span class="input-group-text">==</span>
+		<span class="input-group-text">===</span>
 	</div>
-	<select name="wplra_filter_by_email" class="form-control wplra_filter_select wplra_filter_by_email" <?php echo 'email' === $filter_by ? " style='display:block;'" : ''; ?>>
+	<select name="wplra_filter_by_email" class="form-control wplra_filter_select wplra_filter_by_email" <?php echo 'email' === $filter_by ? " style='display: block;'" : ''; ?>>
 		<?php
 		foreach ( $users as $user ) {
 			if ( ! empty( $user->user_email ) ) {
@@ -47,7 +47,7 @@ $roles = get_editable_roles();
 		}
 		?>
 	</select>
-	<select name="wplra_filter_by_id" class="form-control wplra_filter_select wplra_filter_by_id" <?php echo 'id' === $filter_by ? " style='display:block;'" : ''; ?>>
+	<select name="wplra_filter_by_id" class="form-control wplra_filter_select wplra_filter_by_id" <?php echo 'id' === $filter_by ? " style='display: block;'" : ''; ?>>
 		<?php
 		foreach ( $users as $user ) {
 			if ( ! empty( $user->ID ) ) {
@@ -56,7 +56,7 @@ $roles = get_editable_roles();
 		}
 		?>
 	</select>
-	<select name="wplra_filter_by_role" class="form-control wplra_filter_select wplra_filter_by_role" <?php echo 'role' === $filter_by ? " style='display:block;'" : ''; ?>>
+	<select name="wplra_filter_by_role" class="form-control wplra_filter_select wplra_filter_by_role" <?php echo 'role' === $filter_by ? " style='display: block;'" : ''; ?>>
 		<?php
 		foreach ( $roles as $role_name => $role_info ) {
 			if ( ! empty( $role_name ) ) {
@@ -65,7 +65,7 @@ $roles = get_editable_roles();
 		}
 		?>
 	</select>
-	<select name="wplra_filter_by_username" class="form-control wplra_filter_select wplra_filter_by_username" <?php echo 'username' === $filter_by ? " style='display:block;'" : ''; ?>>
+	<select name="wplra_filter_by_username" class="form-control wplra_filter_select wplra_filter_by_username" <?php echo 'username' === $filter_by ? " style='display: block;'" : ''; ?>>
 		<?php
 		foreach ( $users as $user ) {
 			if ( ! empty( $user->user_login ) ) {

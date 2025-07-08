@@ -147,7 +147,7 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 			'manage_options',
 			'wp-after-login-redirect-advanced',
 			array( $this, 'menu_page' ),
-			'dashicons-menu'
+			'dashicons-randomize'
 		);
 	}
 

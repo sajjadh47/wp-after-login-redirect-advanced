@@ -22,7 +22,7 @@ $wplra_login_redirect_filters = get_option( 'wplra_login_redirect_filters', arra
 ?>
 
 <div class="wrap">
-	<h2><?php esc_html_e( 'Redirect User After Login Conditionally', 'wp-after-login-redirect-advanced' ); ?></h2>
+	<h2><?php esc_html_e( 'Redirect User After Login', 'wp-after-login-redirect-advanced' ); ?></h2>
 	<div class="notice wplra_login_redirect_filter_message"><p></p></div><br>
 	<form action="" method="post" id="wplra_login_redirect_filter_form">
 		<div class="form-group row mb-3">
