@@ -138,6 +138,7 @@ class Wp_After_Login_Redirect_Advanced {
 		$plugin_public = new Wp_After_Login_Redirect_Advanced_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_filter( 'login_redirect', $plugin_public, 'login_redirect', 99, 3 );
+		$this->loader->add_filter( 'woocommerce_login_redirect', $plugin_public, 'wc_login_redirect', 99, 2 );
 	}
 
 	/**

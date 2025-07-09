@@ -268,6 +268,34 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 			}
 		}
 
+		if ( isset( $_POST['wplra_wc_login_redirect_enable'] ) && ! empty( $_POST['wplra_wc_login_redirect_enable'] ) ) {
+			if ( 'on' === $_POST['wplra_wc_login_redirect_enable'] ) {
+				// Check if current is an administrator.
+				if ( current_user_can( 'manage_options' ) ) {
+					// Enable the redirection.
+					update_option( 'wplra_wc_login_redirect_enable', 'on' );
+
+					// Send enabled message back to the response.
+					wp_send_json( $this->messages['filter_enabled_msg'] );
+				} else {
+					// User is not an admin.
+					wp_send_json( $this->messages['permission_denied_msg'] );
+				}
+			} elseif ( 'off' === $_POST['wplra_wc_login_redirect_enable'] ) {
+				// Check if current is an administrator.
+				if ( current_user_can( 'manage_options' ) ) {
+					// Disable the redirection.
+					update_option( 'wplra_wc_login_redirect_enable', 'off' );
+
+					// Send disabled message back to the response.
+					wp_send_json( $this->messages['filter_disabled_msg'] );
+				} else {
+					// User is not an admin.
+					wp_send_json( $this->messages['permission_denied_msg'] );
+				}
+			}
+		}
+
 		wp_send_json( $this->messages['default_msg'] );
 	}
 
@@ -354,11 +382,11 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 			),
 			'filter_enabled_msg'    => array(
 				'type'    => 'notice-success',
-				'message' => __( 'Filters Enabled!', 'wp-after-login-redirect-advanced' ),
+				'message' => __( 'Redirection Enabled!', 'wp-after-login-redirect-advanced' ),
 			),
 			'filter_disabled_msg'   => array(
 				'type'    => 'notice-success',
-				'message' => __( 'Filters Disabled!', 'wp-after-login-redirect-advanced' ),
+				'message' => __( 'Redirection Disabled!', 'wp-after-login-redirect-advanced' ),
 			),
 		);
 

@@ -16,8 +16,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Retrieve plugin settings.
-$wplra_login_redirect_enabled = get_option( 'wplra_login_redirect_enable', 'off' );
-$wplra_login_redirect_filters = get_option( 'wplra_login_redirect_filters', array() );
+$wplra_login_redirect_enabled    = get_option( 'wplra_login_redirect_enable', 'off' );
+$wplra_wc_login_redirect_enabled = get_option( 'wplra_wc_login_redirect_enable', 'off' );
+$wplra_login_redirect_filters    = get_option( 'wplra_login_redirect_filters', array() );
 
 ?>
 
@@ -26,14 +27,30 @@ $wplra_login_redirect_filters = get_option( 'wplra_login_redirect_filters', arra
 	<div class="notice wplra_login_redirect_filter_message"><p></p></div><br>
 	<form action="" method="post" id="wplra_login_redirect_filter_form">
 		<div class="form-group row mb-3">
-			<div class="col-sm-2 wplra-enable-redirection">
+			<div class="col-sm-3 wplra-enable-redirection">
 				<?php esc_html_e( 'Enable Redirection', 'wp-after-login-redirect-advanced' ); ?>
 			</div>
-			<div class="col-sm-10">
+			<div class="col-sm-9">
 				<div class="form-check">
 					<div class="wplra-filter-slider">
-						<input type="checkbox" name="wplra-filter-slider" class="wplra-filter-slider-checkbox" id="wplra_login_redirect_enable" <?php checked( 'on', $wplra_login_redirect_enabled ); ?>>
+						<input type="checkbox" name="wplra_login_redirect_enable" class="wplra-filter-slider-checkbox" id="wplra_login_redirect_enable" <?php checked( 'on', $wplra_login_redirect_enabled ); ?>>
 						<label class="wplra-filter-slider-label" for="wplra_login_redirect_enable">
+							<span class="wplra-filter-slider-inner"></span>
+							<span class="wplra-filter-slider-circle"></span>
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group row mb-3">
+			<div class="col-sm-3 wplra-enable-redirection">
+				<?php esc_html_e( 'Enable compatibility with WooCommerce', 'wp-after-login-redirect-advanced' ); ?>
+			</div>
+			<div class="col-sm-9">
+				<div class="form-check">
+					<div class="wplra-filter-slider">
+						<input type="checkbox" name="wplra_wc_login_redirect_enable" class="wplra-filter-slider-checkbox" id="wplra_wc_login_redirect_enable" <?php checked( 'on', $wplra_wc_login_redirect_enabled ); ?>>
+						<label class="wplra-filter-slider-label" for="wplra_wc_login_redirect_enable">
 							<span class="wplra-filter-slider-inner"></span>
 							<span class="wplra-filter-slider-circle"></span>
 						</label>

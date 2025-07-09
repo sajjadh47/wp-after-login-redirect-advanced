@@ -4,7 +4,7 @@ Contributors: sajjad67
 Author: Sajjad Hossain Sagor
 Tested up to: 6.8
 Requires at least: 5.6
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -21,6 +21,7 @@ Send user to custom page after successful user login. Filter user by id, email, 
 - Create Unlimited Filters
 - Filter Enable / Disable Option
 - Save Filter Settings via AJAX
+- Compatibility with WooCommerce My Account page login
 
 == Installation ==
 To add a WordPress Plugin using the built-in plugin installer:
@@ -47,6 +48,8 @@ Just activate After Login Redirect plugin, and go to plugin page called Login Re
 1. Login Redirect Filter Add.
 
 == Changelog ==
+= 2.0.2 =
+- Added compatibility with WooCommerce My Account login
 = 2.0.1 =
 - Checked for latest wp version 6.8
 = 2.0.0 =

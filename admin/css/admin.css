@@ -112,11 +112,11 @@ select.form-control.wplra_filter_select.wplra_filter_by_id.wplra_saved_filter {
 	width: 20px;
 }
 
-.wplra-filter-slider-checkbox:checked+.wplra-filter-slider-label .wplra-filter-slider-inner {
+.wplra-filter-slider-checkbox:checked + .wplra-filter-slider-label .wplra-filter-slider-inner {
 	margin-left: 0;
 }
 
-.wplra-filter-slider-checkbox:checked+.wplra-filter-slider-label .wplra-filter-slider-circle {
+.wplra-filter-slider-checkbox:checked + .wplra-filter-slider-label .wplra-filter-slider-circle {
 	background-color: #eee;
 	right: 0;
 }
@@ -126,5 +126,5 @@ select.form-control.wplra_filter_select.wplra_filter_by_id.wplra_saved_filter {
 }
 
 .wplra_filtering_group_container .form-control {
-	border: var(--bs-border-width) solid var(--bs-border-color);
+	border: var( --bs-border-width ) solid var( --bs-border-color );
 }

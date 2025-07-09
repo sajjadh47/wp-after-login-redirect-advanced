@@ -77,6 +77,43 @@ jQuery( document ).ready( function( $ )
 		} );
 	} );
 
+	$( '#wplra_wc_login_redirect_enable' ).click( function( event )
+	{
+		$( '.wplra_login_redirect_filter_message' ).hide( 'slow' );
+		
+		var _this = $( this );
+		var data  =
+		{
+			wplra_wc_login_redirect_enable : 'off',
+			action  					   : 'wplra_save_enable_disable_toggle',
+			wplra_nonce  				   : $( '#wplra_nonce' ).val()
+		};
+		
+		if ( $( _this ).is( ':checked' ) )
+		{
+			data.wplra_wc_login_redirect_enable = 'on';
+		}
+
+		$.post( ajaxurl, data, function( response )
+		{
+			$( '.wplra_login_redirect_filter_message p' ).text( response.message );
+
+			$( '.wplra_login_redirect_filter_message' ).removeClass( 'notice-error notice-success' ).addClass( response.type ).show( 'slow' );
+
+			if ( response.type == 'notice-error' )
+			{
+				if ( $( _this ).is( ':checked' ) )
+				{
+					$( _this ).prop( 'checked', false );
+				}
+				else
+				{
+					$( _this ).prop( 'checked', true );
+				}
+			}
+		} );
+	} );
+
 	$( '#wplra_login_redirect_filter_submit' ).click( function( event )
 	{
 		event.preventDefault();

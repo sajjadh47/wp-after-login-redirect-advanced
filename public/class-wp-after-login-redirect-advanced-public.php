@@ -104,4 +104,62 @@ class Wp_After_Login_Redirect_Advanced_Public {
 		// Return the original redirect URL if no filter matches.
 		return $redirect_to;
 	}
+
+	/**
+	 * Filters the woocommerce my account login redirect URL based on user criteria.
+	 *
+	 * This function modifies the login redirect URL based on user ID, email, role, or username,
+	 * according to the settings configured in the plugin's options.
+	 *
+	 * @since     2.0.0
+	 * @access    public
+	 * @param     string  $redirect_to The redirect destination URL.
+	 * @param     WP_User $user        The WP_User object.
+	 * @return    string               The filtered redirect URL.
+	 */
+	public function wc_login_redirect( $redirect_to, $user ) {
+		// Retrieve plugin settings.
+		$wplra_login_redirect_enabled    = get_option( 'wplra_login_redirect_enable', 'off' );
+		$wplra_wc_login_redirect_enabled = get_option( 'wplra_wc_login_redirect_enable', 'off' );
+		$wplra_login_redirect_filters    = get_option( 'wplra_login_redirect_filters', array() );
+
+		// Check if login redirect is enabled.
+		if ( 'on' === $wplra_login_redirect_enabled && 'on' === $wplra_wc_login_redirect_enabled ) {
+			// Check if redirect filters are defined.
+			if ( ! empty( $wplra_login_redirect_filters ) ) {
+				// Iterate through each filter.
+				foreach ( $wplra_login_redirect_filters as $filter ) {
+					// Check the filter type.
+					switch ( $filter['filter_by'] ) {
+						case 'id':
+							if ( isset( $user->ID ) && $user->ID === $filter['filter_by_value'] ) {
+								return esc_url( $filter['redirect_to_url'] );
+							}
+							break;
+
+						case 'email':
+							if ( isset( $user->user_email ) && $user->user_email === $filter['filter_by_value'] ) {
+								return esc_url( $filter['redirect_to_url'] );
+							}
+							break;
+
+						case 'role':
+							if ( isset( $user->roles ) && is_array( $user->roles ) && in_array( $filter['filter_by_value'], $user->roles, true ) ) {
+								return esc_url( $filter['redirect_to_url'] );
+							}
+							break;
+
+						case 'username':
+							if ( isset( $user->user_login ) && $user->user_login === $filter['filter_by_value'] ) {
+								return esc_url( $filter['redirect_to_url'] );
+							}
+							break;
+					}
+				}
+			}
+		}
+
+		// Return the original redirect URL if no filter matches.
+		return $redirect_to;
+	}
 }

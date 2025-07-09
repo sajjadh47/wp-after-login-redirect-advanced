@@ -54,6 +54,9 @@ Just activate After Login Redirect plugin, and go to plugin page called Login Re
 
 ## Changelog
 
+### 2.0.2
+- Added compatibility with WooCommerce My Account login
+
 ### 2.0.1
 - Checked for latest wp version 6.8
 
