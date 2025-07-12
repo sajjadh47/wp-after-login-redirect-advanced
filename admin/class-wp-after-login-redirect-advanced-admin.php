@@ -66,7 +66,7 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 		$current_screen = get_current_screen();
 
 		// check if current page is plugin settings page.
-		if ( 'toplevel_page_wp-after-login-redirect-advanced' === $current_screen->id ) {
+		if ( 'users_page_wp-after-login-redirect-advanced' === $current_screen->id ) {
 			wp_enqueue_style( $this->plugin_name, WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_URL . 'admin/css/admin.css', array(), $this->version, 'all' );
 		}
 	}
@@ -81,7 +81,7 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 		$current_screen = get_current_screen();
 
 		// check if current page is plugin settings page.
-		if ( 'toplevel_page_wp-after-login-redirect-advanced' === $current_screen->id ) {
+		if ( 'users_page_wp-after-login-redirect-advanced' === $current_screen->id ) {
 			wp_enqueue_script( $this->plugin_name, WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_URL . 'admin/js/admin.js', array( 'jquery', 'jquery-ui-autocomplete' ), $this->version, false );
 
 			$post_types = get_post_types(
@@ -129,7 +129,7 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 	 * @return    array $links The updated array of plugin action links, including the settings link.
 	 */
 	public function add_plugin_action_links( $links ) {
-		$links[] = sprintf( '<a href="%s">%s</a>', esc_url( admin_url( 'admin.php?page=wp-after-login-redirect-advanced' ) ), __( 'Settings', 'wp-after-login-redirect-advanced' ) );
+		$links[] = sprintf( '<a href="%s">%s</a>', esc_url( admin_url( 'users.php?page=wp-after-login-redirect-advanced' ) ), __( 'Settings', 'wp-after-login-redirect-advanced' ) );
 
 		return $links;
 	}
@@ -141,13 +141,13 @@ class Wp_After_Login_Redirect_Advanced_Admin {
 	 * @access    public
 	 */
 	public function admin_menu() {
-		add_menu_page(
+		add_submenu_page(
+			'users.php',
 			__( 'Login Redirect', 'wp-after-login-redirect-advanced' ),
 			__( 'Login Redirect', 'wp-after-login-redirect-advanced' ),
 			'manage_options',
 			'wp-after-login-redirect-advanced',
 			array( $this, 'menu_page' ),
-			'dashicons-randomize'
 		);
 	}
 
