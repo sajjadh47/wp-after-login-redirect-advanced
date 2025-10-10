@@ -110,7 +110,7 @@ class Wp_After_Login_Redirect_Advanced_Public {
 								}
 							} catch ( Exception $e ) {
 								// do nothing now.
-								continue;
+								break;
 							}
 							break;
 					}
@@ -185,7 +185,7 @@ class Wp_After_Login_Redirect_Advanced_Public {
 								}
 							} catch ( Exception $e ) {
 								// do nothing now.
-								continue;
+								break;
 							}
 							break;
 					}
