@@ -21,6 +21,9 @@ $users = get_users();
 // get all registered user roles.
 $roles = get_editable_roles();
 
+// get all countries.
+$countries = Wp_After_Login_Redirect_Advanced::get_countries();
+
 ?>
 
 <div class="input-group mb-3 wplra_filtering_group_container">
@@ -34,6 +37,7 @@ $roles = get_editable_roles();
 		<option value="email" <?php selected( $filter_by, 'email' ); ?>><?php esc_html_e( 'User Email', 'wp-after-login-redirect-advanced' ); ?></option>
 		<option value="role" <?php selected( $filter_by, 'role' ); ?>><?php esc_html_e( 'User Role', 'wp-after-login-redirect-advanced' ); ?></option>
 		<option value="username" <?php selected( $filter_by, 'username' ); ?>><?php esc_html_e( 'User Username', 'wp-after-login-redirect-advanced' ); ?></option>
+		<option value="country" <?php selected( $filter_by, 'country' ); ?>><?php esc_html_e( 'User Country', 'wp-after-login-redirect-advanced' ); ?></option>
 	</select>
 	<div class="input-group-append">
 		<span class="input-group-text">===</span>
@@ -70,6 +74,15 @@ $roles = get_editable_roles();
 		foreach ( $users as $user ) {
 			if ( ! empty( $user->user_login ) ) {
 				echo '<option ' . selected( $filter_by_value, $user->user_login ) . ' value="' . esc_attr( $user->user_login ) . '">' . esc_html( $user->user_login ) . '</option>';
+			}
+		}
+		?>
+	</select>
+	<select name="wplra_filter_by_country" class="form-control wplra_filter_select wplra_filter_by_country" <?php echo 'country' === $filter_by ? " style='display: block;'" : ''; ?>>
+		<?php
+		foreach ( $countries as $country_code => $country_name ) {
+			if ( ! empty( $country_code ) ) {
+				echo '<option ' . selected( $filter_by_value, $country_code ) . ' value="' . esc_attr( $country_code ) . '">' . esc_html( $country_name ) . '</option>';
 			}
 		}
 		?>

@@ -96,6 +96,23 @@ class Wp_After_Login_Redirect_Advanced_Public {
 								return esc_url( $filter['redirect_to_url'] );
 							}
 							break;
+						case 'country':
+							$visitor_ip = Wp_After_Login_Redirect_Advanced::get_visitor_ip();
+							// if result is found then redirect.
+							try {
+								// This creates the Reader object.
+								$reader          = new \GeoIp2\Database\Reader( WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_PATH . 'public/geoip-db/GeoLite2-Country.mmdb' );
+								$visitor_geo     = $reader->country( $visitor_ip );
+								$visitor_country = $visitor_geo->country->isoCode;
+
+								if ( strtolower( $visitor_country ) === strtolower( $filter['filter_by_value'] ) ) {
+									return esc_url( $filter['redirect_to_url'] );
+								}
+							} catch ( Exception $e ) {
+								// do nothing now.
+								continue;
+							}
+							break;
 					}
 				}
 			}
@@ -152,6 +169,23 @@ class Wp_After_Login_Redirect_Advanced_Public {
 						case 'username':
 							if ( isset( $user->user_login ) && $user->user_login === $filter['filter_by_value'] ) {
 								return esc_url( $filter['redirect_to_url'] );
+							}
+							break;
+						case 'country':
+							$visitor_ip = Wp_After_Login_Redirect_Advanced::get_visitor_ip();
+							// if result is found then redirect.
+							try {
+								// This creates the Reader object.
+								$reader          = new \GeoIp2\Database\Reader( WP_AFTER_LOGIN_REDIRECT_ADVANCED_PLUGIN_PATH . 'public/geoip-db/GeoLite2-Country.mmdb' );
+								$visitor_geo     = $reader->country( $visitor_ip );
+								$visitor_country = $visitor_geo->country->isoCode;
+
+								if ( strtolower( $visitor_country ) === strtolower( $filter['filter_by_value'] ) ) {
+									return esc_url( $filter['redirect_to_url'] );
+								}
+							} catch ( Exception $e ) {
+								// do nothing now.
+								continue;
 							}
 							break;
 					}

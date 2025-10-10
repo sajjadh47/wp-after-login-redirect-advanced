@@ -4,13 +4,13 @@
 
 **Tags:** wp-login, wp-custom-login, login-redirect, custom-redirect, wp-login-customize \
 **Tested up to:** 6.8 \
-**Requires PHP:** 8.0
+**Requires PHP:** 8.1
 
 Redirect user to anywhere at your will.
 
 ## Description
 
-Send user to custom page after successfull user login. Filter user id,email,username and by user role to redirect user to specific page.
+Send user to custom page after successful user login. Filter user by id, email, username, user role and by user visited country to redirect user to specific page.
 
 ### Features:
 
@@ -18,8 +18,10 @@ Send user to custom page after successfull user login. Filter user id,email,user
 - Automatically Redirect to Specific Pages Based on Defined Filters
 - Auto-Suggest URLs for All Pages and Posts in the "Redirect To" Field
 - Create Unlimited Filters
+- Redirect by user visited country
 - Filter Enable / Disable Option
 - Save Filter Settings via AJAX
+- Compatibility with WooCommerce My Account page login
 
 ## Installation
 
@@ -53,6 +55,9 @@ Just activate After Login Redirect plugin, and go to plugin page called Login Re
 
 
 ## Changelog
+
+### 2.0.3
+- Added redirection by user visited country
 
 ### 2.0.2
 - Added compatibility with WooCommerce My Account login
