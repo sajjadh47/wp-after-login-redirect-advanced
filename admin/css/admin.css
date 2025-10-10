@@ -14,6 +14,7 @@
 .wplra_filtering_group_container .wplra_filter_by_username,
 .wplra_filtering_group_container .wplra_filter_by_role,
 .wplra_filtering_group_container .wplra_filter_by_email,
+.wplra_filtering_group_container .wplra_filter_by_country,
 .wplra_filtering_group_container .wplra_filter_by_id {
 	display: none;
 }
