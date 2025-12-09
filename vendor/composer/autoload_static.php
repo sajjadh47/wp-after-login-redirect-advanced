@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitWp_After_Login_Redirect_Advanced
+class ComposerStaticInitWp_After_Login_Redirect_Advanced204
 {
     public static $prefixLengthsPsr4 = array (
         'M' => 
@@ -53,9 +53,9 @@ class ComposerStaticInitWp_After_Login_Redirect_Advanced
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitWp_After_Login_Redirect_Advanced::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitWp_After_Login_Redirect_Advanced::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitWp_After_Login_Redirect_Advanced::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitWp_After_Login_Redirect_Advanced204::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitWp_After_Login_Redirect_Advanced204::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitWp_After_Login_Redirect_Advanced204::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -2,9 +2,9 @@
 Tags: wp-login, wp-custom-login, login-redirect, custom-redirect, wp-login-customize
 Contributors: sajjad67
 Author: Sajjad Hossain Sagor
-Tested up to: 6.8
+Tested up to: 6.9
 Requires at least: 5.6
-Stable tag: 2.0.3
+Stable tag: 2.0.4
 Requires PHP: 8.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -49,6 +49,8 @@ Just activate After Login Redirect plugin, and go to plugin page called Login Re
 1. Login Redirect Filter Add.
 
 == Changelog ==
+= 2.0.4 =
+- Checked for latest wp version 6.9
 = 2.0.3 =
 - Added redirection by user visited country
 = 2.0.2 =
